@@ -1,0 +1,11 @@
+Django==1.7.1
+Jinja2==2.7.3
+MarkupSafe==0.23
+PyYAML==3.11
+django-debug-toolbar==1.2.2
+django-grappelli==2.6.3
+django-jinja==1.0.5
+pytz==2014.10
+sqlparse==0.1.14
+wsgiref==0.1.2
+yamjam==0.1.7
