@@ -429,3 +429,26 @@ article .btn:active {
 	box-shadow: none !important;
 	border: 1px solid #222 !important;
 }
+
+/************* Blog Detail View **************/
+.blog-detail-header {
+	font-size: 20px;
+	line-height: 1.4;
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+.blog-detail-header h2 {
+	padding-top: 6px;
+}
+
+.blog-detail p {
+	font-size: 20px;
+	line-height 1.4;
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+}
+@media screen and (max-width: 768px) {
+	.blog-detail-header {
+		padding: 0px;
+	}
+}
