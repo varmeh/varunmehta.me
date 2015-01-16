@@ -1,0 +1,23 @@
+{% extends 'blog_list.html' %}
+
+{% block content %}
+<!-- Single button -->
+    <div class="container tag">
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                <div class="input-group">
+                    <input class="form-control tag-style" type="text" placeholder="{{ tag_title|upper }}" readonly>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-primary dropdown-toggle tag-style" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            {% for tag in tags %}
+                              <li><a href="{{ tag.get_absolute_url() }}"> {{ tag.title|upper }} </a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ super() }}
+{% endblock %}

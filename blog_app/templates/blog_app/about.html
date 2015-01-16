@@ -1,0 +1,47 @@
+{% extends "base_layout.html" %}
+
+{% set active_page = "about" %}
+
+{% block content %}
+<div class="container content body-about">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="about">
+				<h1>Hello, I am <strong>Varun Mehta.</strong></h1>
+				<p class="about-large">I hold a Bachelor of Technology in Information Technology and have 7 years of IT experience.</p>
+				<img src="{{ static('blog_app/images/me.jpg') }}" class="about-portrait img-responsive img-circle" alt="Image - Varun Mehta">
+				<p class="about-medium">I have worked in domains ranging from <em>Embedded System</em> to <em>Slot Gaming.</em></p>
+				<p class="about-medium">I love learning new domains, technology associated and monetization of the eco system.Now, I have set my eyes on <em>Web Technologies.</em></p>
+				<p class="about-large">Idea of blog is to share my experience and day to day learnings in crisp manner.</p>
+				<a class="btn btn-primary btn-lg" href="#contact"> Contact Me </a>
+				<hr />
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container center-block body-about">
+	<div class="row text-center">
+		<div class="col-md-8 col-md-offset-2">
+			<h2>Social</h2>
+			<div class="row social-icons">
+				<div class="col-md-3 col-md-offset-3 col-xs-4 col-xs-offset-2">
+					<a href="http://www.linkedin.com/in/varunsagi20" class="linkedin"><i class="fa fa-linkedin fa-5x"></i></a>
+				</div>
+				<div class="col-md-3 col-xs-4">
+					<a href="https://github.com/varunsagi20" class="github"><i class="fa fa-github-alt fa-5x"></i></a>
+				</div>
+			</div>
+			<hr />
+		</div>
+		<div class="row text-center">
+			<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1" id="contact">
+				<h2>Contact</h2>
+				<div class="form-group"><input type="text" class="form-control input-lg" placeholder="Name"></div>
+				<div class="form-group"><input type="email" class="form-control input-lg" placeholder="Your email"></div>
+				<div class="form-group"><textarea class="form-control input-lg" rows="5" placeholder="Your Thoughts..."></textarea></div>
+				<button class="btn btn-primary btn-lg pull-right" type="submit">Submit</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

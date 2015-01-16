@@ -1,0 +1,50 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container content">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            {% for blog in blogs %}
+                {% if not loop.last %} <article class="blog-teaser"> {% else %} <article class="blog-teaser last"> {% endif %}
+                    <header>
+                        <div class="post-date"><i class="fa fa-calendar"></i> {{ blog.published_on|date }}</div>
+                        <h2><a href="{{ blog.get_absolute_url() }}" class="blog_title">{{ blog.title }}</a></h2>
+                    </header>
+                    <p> {{ blog.body|safe }} </p>
+                    <div class="clearfix"><a href="{{ blog.get_absolute_url() }}" class="btn btn-primary" type="button">Read More</a></div>
+                </article>
+            {% endfor %}
+            <div class="text-center">
+                {% if is_paginated %}
+                    <ul class="pagination pagination-lg">
+                        <li {% if not page_obj.has_previous() %} class="disabled" {% endif %}>
+                            <a {% if not page_obj.has_previous() %} class="a-disable" {% else %} href="?page={{ page_obj.previous_page_number() }}" {% endif %} aria-label="Previous">
+                                <i class="fa fa-arrow-circle-left"></i>
+                            </a>
+                        </li>
+                        {% if paginator.num_pages <= 3 or page_obj.number <=3 %}
+                            {% for i in paginator.page_range[0:3] %}
+                            <li {% if page_obj.number == i %} class="active-page" {% endif %}>
+                                <a href="?page={{i}}">{{i}}</a>
+                            </li>
+                            {% endfor %}
+                        {% else %}
+                            {% for i in paginator.page_range[page_obj.number-3:page_obj.number] %}
+                            <li {% if page_obj.number == i %} class="active-page" {% endif %}>
+                                <a href="?page={{i}}">{{i}}</a>
+                            </li>
+                            {% endfor %}
+                        {% endif %}
+
+                        <li {% if not page_obj.has_next() %} class="disabled"{% endif %}>
+                            <a {% if not page_obj.has_next() %} class="a-disable" {% else %} href="?page={{ page_obj.next_page_number() }}" {% endif %}aria-label="Next">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
