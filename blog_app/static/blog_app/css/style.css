@@ -452,3 +452,6 @@ article .btn:active {
 		padding: 0px;
 	}
 }
+#disqus_thread {
+	padding-bottom: 2.5em;
+}

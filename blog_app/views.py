@@ -29,19 +29,6 @@ class BlogDetail(DetailView):
         return context
 
 #Blog Attached to Tag
-# class TagBlogList(ListView):
-#     template_name = 'blog_list.html'
-#     context_object_name = 'blogs'
-#     paginate_by = 3
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(TagBlogList, self).get_context_data(**kwargs)
-#         context['tags'] = Tag.objects.all().order_by('title')
-#         return context
-#
-#     def get_queryset(self):
-#         return Blog.objects.filter(tags__slug=self.kwargs.get('slug'))
-
 class TagBlogList(BlogList):
     template_name = 'tag_list.html'
 
