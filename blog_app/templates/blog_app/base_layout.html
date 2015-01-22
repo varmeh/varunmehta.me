@@ -106,7 +106,7 @@
                             <h3><i class="fa fa-cog"></i> Statistics</h3>
                             <div class="stats">
                                 <div class="line">
-                                    <span class="counter">27</span>
+                                    <span class="counter">{{ footer['blog_count'] }}</span>
                                     <span class="caption">Articles</span>
                                 </div>
                                 <div class="line">
@@ -122,20 +122,17 @@
                         <div class="col-sm-4 col-md-4 footer-widget">
                             <h3><i class="fa fa-paper-plane-o"></i> Recent Post</h3>                            
                             <ul class="recent-post">
-                                <li><a href="#">Postgresql vs MySQL</a></li>
-                                <li><a href="#">Blog5</a></li>
-                                <li><a href="#">Blog5</a></li>
+                                {% for blog in footer['recent_blog'] %}
+                                    <li><a href="{{ blog.get_absolute_url() }}"> {{ blog.title }} </a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="col-sm-4 col-md-4 footer-widget">
                             <h3><i class="fa fa-tags"></i> Tags</h3>
                             <ul class="tags">
-                                <li><button class="btn btn-primary" type="button">Python<span class="badge"> 4</span></button></li>
-                                <li><button class="btn btn-primary" type="button">Django<span class="badge"> 4</span></button></li>
-                                <li><button class="btn btn-primary" type="button">HTML<span class="badge"> 4</span></button></li>
-                                <li><button class="btn btn-primary" type="button">CSS<span class="badge"> 4</span></button></li>
-                                <li><button class="btn btn-primary" type="button">Javascript<span class="badge"> 4</span></button></li>
-                                <li><button class="btn btn-primary" type="button">jQuery<span class="badge"> 4</span></button></li>
+                                {% for tag in footer['tags'] %}
+                                    <li role="presentation"><button class="btn btn-primary" type="button"><a href="{{ tag.get_absolute_url() }}"> {{ tag.title|capitalize }}</a><span class="badge"> {{ tag.blog__count }}</span></button></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

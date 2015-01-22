@@ -10,7 +10,7 @@
                     <div class="input-group-btn">
                         <button type="button" class="btn btn-primary dropdown-toggle tag-style" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            {% for tag in tags %}
+                            {% for tag in footer['tags'] %}
                               <li><a href="{{ tag.get_absolute_url() }}"> {{ tag.title|upper }} </a></li>
                             {% endfor %}
                         </ul>

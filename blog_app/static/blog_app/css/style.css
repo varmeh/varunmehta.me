@@ -133,6 +133,7 @@ body {
 	margin: 0 0 15px 0;
 	padding-left: 0;
 }
+
 .tags li {
 	float: left;
 }
@@ -146,8 +147,13 @@ body {
 	color: inherit;
 	background-color: #4d5f6f;
 }
+.tags a {
+	color: inherit;
+	text-decoration: none !important;
+}
 .tags li button:hover,
-.tags li button:active {
+.tags li button:active,
+.tags li button:focus {
 	color: #fff;
 	background-color: #00b9e8;
 	outline: none;

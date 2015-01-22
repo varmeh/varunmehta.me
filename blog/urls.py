@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', views.BlogList.as_view(), name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^about/$',TemplateView.as_view(template_name='about.html')),
+    url(r'^about/$',views.About.as_view()),
     url(r'^blog/', include('blog_app.urls')),
 
     url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
